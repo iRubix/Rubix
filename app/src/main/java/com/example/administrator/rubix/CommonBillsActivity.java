@@ -8,6 +8,6 @@ public class CommonBillsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.common_bills_layout);
+        setContentView(R.layout.commonbilllistlayout);
     }
 }

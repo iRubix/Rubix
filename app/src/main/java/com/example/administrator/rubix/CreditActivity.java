@@ -8,6 +8,6 @@ public class CreditActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.credit_layout);
+        setContentView(R.layout.creditlistlayout);
     }
 }

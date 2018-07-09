@@ -8,6 +8,6 @@ public class DeclarationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.declaration_layout);
+        setContentView(R.layout.declarationlistlayout);
     }
 }
