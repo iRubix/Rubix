@@ -27,7 +27,10 @@
         <activity android:name=".SplashActivity" />
         <activity android:name=".MainPageActivity" />
         <activity android:name=".MessageActivity" />
-        <activity android:name=".CommonBillsActivity"></activity>
+        <activity android:name=".CommonBillsActivity" />
+        <activity android:name=".DeclarationActivity" />
+        <activity android:name=".CreditActivity" />
+        <activity android:name=".ChartActivity"></activity>
     </application>
 
 </manifest>

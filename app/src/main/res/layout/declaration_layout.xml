@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DeclarationActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+
+    <EditText
+        android:paddingRight="5dp"
+    android:textDirection="rtl"
+    android:gravity="right"
+    android:layout_marginTop="10dp"
+    android:hint="موضوع اعلان"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content" />
+
+    <EditText
+        android:paddingRight="5dp"
+        android:textDirection="rtl"
+        android:gravity="right"
+        android:layout_marginTop="10dp"
+        android:hint="تاریخ اعلان"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:textDirection="rtl"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:paddingRight="5dp"
+            android:hint="سمت"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="0dp"></LinearLayout>
+        <EditText
+            android:paddingRight="5dp"
+            android:hint="فرستنده"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</LinearLayout>
