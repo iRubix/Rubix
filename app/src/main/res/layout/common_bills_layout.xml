@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CommonBillsActivity"
+    android:gravity="center_horizontal"
+
+    >
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="موضوع صورتحساب"
+        android:layout_marginTop="10dp"/>
+
+    <RelativeLayout
+        android:gravity="right"
+        android:textDirection="rtl"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:id="@+id/Rial"
+            android:paddingRight="40dp"
+            android:textDirection="rtl"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="ریال"
+            android:layout_toLeftOf="@id/cmBillPrice"
+            />
+        <TextView
+            android:id="@+id/cmBillPrice"
+
+            android:textDirection="rtl"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="مبلغ"
+            android:layout_toLeftOf="@id/cmBillDate"
+            />
+        <TextView
+            android:id="@+id/cmBillDate"
+            android:paddingRight="10dp"
+            android:textDirection="rtl"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="تاریخ پرداخت"/>
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</LinearLayout>

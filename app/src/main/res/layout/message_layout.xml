@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MessageActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/mainbacktop"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+
+            android:src="@drawable/rubix"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/mainbackcenter"
+        android:orientation="vertical"
+        android:layoutDirection="rtl"
+
+        >
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layoutDirection="rtl"
+    >
+
+        <Spinner
+            android:id="@+id/MsgReciever"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:textDirection="rtl"
+            android:layoutDirection="rtl"
+
+
+            />
+    <TextView
+        android:id="@+id/lblReciever"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="admin"
+        />
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        >
+        <EditText
+            android:id="@+id/txtSubject"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:hint="موضوع پیام"
+            android:paddingRight="10dp"
+            />
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            >
+            <EditText
+                android:id="@+id/txtMessage"
+                android:layout_width="250dp"
+                android:layout_height="150dp"
+                android:hint="متن پیام"
+                android:paddingRight="10dp"
+                android:gravity="top"
+                android:paddingTop="10dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            >
+            <Button
+                android:id="@+id/btnSend"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:hint="ارسال پیام"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:background="@drawable/mainbackdown"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"></LinearLayout>
+
+
+</LinearLayout>
