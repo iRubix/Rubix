@@ -13,17 +13,6 @@
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="Z:/" />
-        <option name="modules">
-          <set>
-            <option value="Z:" />
-            <option value="Z:/app" />
-          </set>
-        </option>
-        <option name="resolveModulePerSourceSet" value="false" />
-      </GradleProjectSettings>
     </option>
   </component>
 </project>
