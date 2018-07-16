@@ -11,6 +11,16 @@ public class Login {
     private String UserName;
     private String Password;
 
+    public Login(){
+
+    }
+
+        public Login(Integer id, String userName, String password) {
+            this.id = id;
+            this.UserName = userName;
+            this.Password = password;
+        }
+
 
 
 

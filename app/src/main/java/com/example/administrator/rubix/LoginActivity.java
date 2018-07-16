@@ -11,10 +11,15 @@ import android.widget.Toast;
 
 import java.util.logging.ErrorManager;
 
+import model.DatabaseHelper;
+import model.Login;
+
 public class LoginActivity extends AppCompatActivity {
 private EditText txtUserName,txtPassword;
 private String userName,password;
 private Button btnLogin;
+    private DatabaseHelper dba;
+   private Login user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,8 +61,12 @@ private Button btnLogin;
      * signing in to Account
      */
     private void loginIsValid() {
+        dba=new DatabaseHelper(this);
+        user=new Login();
+        user.setUserName(userName);
+        user.setPassword(password);
         // فعلا به صفحه بعدی برود
-
+        dba.Authenticate(user);
         Intent i=new Intent(this,SplashActivity.class);
         startActivity(i);
 
@@ -72,15 +81,26 @@ private Button btnLogin;
     public boolean validate(){
         boolean valid = true;
 
-        if(userName.isEmpty()||userName.length()>30)
+        if(userName.isEmpty())
         {
             txtUserName.setError("نام کاربری را وارد نمایید");
             valid=false;
 
         }
-        if (password.isEmpty()||password.length()>30)
+        if(userName.length()>30)
+        {
+            txtUserName.setError("نام کاربری معتبر نمی باشد");
+            valid=false;
+
+        }
+        if (password.isEmpty())
         {
             txtPassword.setError("رمز عبور را وارد نمایید");
+            valid=false;
+        }
+        if (password.length()>30)
+        {
+            txtPassword.setError("رمز عبور معتبر نمی باشد");
             valid=false;
         }
 
