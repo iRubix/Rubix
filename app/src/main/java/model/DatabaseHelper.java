@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -20,9 +21,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL(Person.TABLE_NAME);
-        db.execSQL(Login.TABLE_NAME);
-        db.execSQL(Message.TABLE_NAME);
+        db.execSQL(Person.CREATE_TABLE);
+        db.execSQL(Login.CREATE_TABLE);
+        db.execSQL(Message.CREATE_TABLE);
+
 
     }
 
@@ -35,29 +37,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public Boolean Authenticate(Login user) {
+    public Boolean Authenticate(String username) {
+     SQLiteDatabase db = this.getReadableDatabase();
+     Cursor cursor = db.query(Login.TABLE_NAME, new String[] {Login.COLUMN_ID,Login.COLUMN_USERNAME, Login.COLUMN_PASSWORD} ,
+             Login.COLUMN_USERNAME + "=?", new String[]{username},
+             null,null , null );
+        int cursorCount = cursor.getCount();
+        cursor.close();
+        db.close();
 
-        Boolean valid=false;
-        Login User = new Login();
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(Login.CREATE_TABLE,// Selecting Table
-                new String[]{User.getId().toString(), User.getUserName(), User.getPassword()},//Selecting columns want to query
-                User.getId() + "=?",
-                new String[]{User.getUserName()},//Where clause
-                null, null, null);
+        if (cursorCount > 0) {
 
-        if (cursor != null && cursor.moveToFirst() && cursor.getCount() > 0) {
-            //if cursor has value then in user database there is user associated with this given email
 
-            Login user2 = new Login(cursor.getInt(0), cursor.getString(1), cursor.getString(3));
-            //Match both passwords check they are same or not
-            if (user.getPassword().equalsIgnoreCase(user2.getPassword())) {
-                valid = true;
-
-            }
-
+            Log.d("roshan67","khodeshe");
+            return true;
         }
-        return valid;
+
+        return false;
+     }
+
+
+
+//----------***********------------------------
+
+//----------***********------------------------
     }
-}
 

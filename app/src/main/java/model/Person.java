@@ -26,7 +26,7 @@ public class Person {
 
     public static final String CREATE_TABLE =
             " CREATE TABLE " + TABLE_NAME +  "("
-            + COLUMN_ID + "INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL,"
+            + COLUMN_ID + "INTEGER PRIMARY KEY UNIQUE NOT NULL,"
             + COLUMN_FIRSTNAME + "VARCHAR NOT NULL,"
             + COLUMN_LASTNAME + "VARCHAR NOT NULL,"
             + COLUMN_TITLE + "INTEGER,"

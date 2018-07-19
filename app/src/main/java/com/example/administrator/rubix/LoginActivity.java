@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -63,15 +64,16 @@ private Button btnLogin;
     private void loginIsValid() {
         dba=new DatabaseHelper(this);
         user=new Login();
+        Log.d("Roshan","Ghabl");
         user.setUserName(userName);
         user.setPassword(password);
-        // فعلا به صفحه بعدی برود
-        dba.Authenticate(user);
-        Intent i=new Intent(this,SplashActivity.class);
-        startActivity(i);
-
-
-
+        Log.d("Roshan","BAAD");
+        //
+        if (dba.Authenticate(userName)){
+          Toast.makeText(this , "خوش آمدید",Toast.LENGTH_LONG );
+            Intent i=new Intent(this,SplashActivity.class);
+            startActivity(i);
+        }
     }
 
     /**

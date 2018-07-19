@@ -28,7 +28,7 @@ public class Message {
 
     public static final String CREATE_TABLE =
             " CREATE TABLE " + TABLE_NAME +  "("
-                    + COLUMN_ID + "INTEGER  PRIMARY KEY AUTOINCREMENT REFERENCES Person (id) UNIQUE NOT NULL,"
+                    + COLUMN_ID + "INTEGER  PRIMARY KEY UNIQUE NOT NULL,"
                     + COLUMN_SUBJECT + "VARCHAR NOT NULL,"
                     + COLUMN_TEXT + "VARCHAR,"
                     + COLUMN_DATE + "DATE,"
