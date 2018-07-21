@@ -37,24 +37,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public Boolean Authenticate(String username) {
-     SQLiteDatabase db = this.getReadableDatabase();
-     Cursor cursor = db.query(Login.TABLE_NAME, new String[] {Login.COLUMN_ID,Login.COLUMN_USERNAME, Login.COLUMN_PASSWORD} ,
-             Login.COLUMN_USERNAME + "=?", new String[]{username},
-             null,null , null );
-        int cursorCount = cursor.getCount();
-        cursor.close();
-        db.close();
 
-        if (cursorCount > 0) {
-
-
-            Log.d("roshan67","khodeshe");
-            return true;
+    public boolean Authenticate(String name, String password){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor mCursor = db.rawQuery("SELECT * FROM " + Login.CREATE_TABLE + " WHERE NAME='?' AND PASSWORD='?';",
+                new String[]{name,password});
+        if (mCursor != null) {
+            if(mCursor.getCount() > 0)
+            {
+                mCursor.close();
+                return true;
+            }
         }
-
         return false;
-     }
+    }
 
 
 

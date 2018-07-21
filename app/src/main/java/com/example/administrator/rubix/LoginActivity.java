@@ -21,6 +21,7 @@ private String userName,password;
 private Button btnLogin;
     private DatabaseHelper dba;
    private Login user;
+   Boolean storedPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,14 +63,14 @@ private Button btnLogin;
      * signing in to Account
      */
     private void loginIsValid() {
-        dba=new DatabaseHelper(this);
         user=new Login();
-        Log.d("Roshan","Ghabl");
         user.setUserName(userName);
         user.setPassword(password);
-        Log.d("Roshan","BAAD");
         //
-        if (dba.Authenticate(userName)){
+        dba = new DatabaseHelper(LoginActivity.this);
+        // TODO: Implement your own authentication logic here.
+        storedPassword = dba.Authenticate(userName,password);
+        if (storedPassword){
           Toast.makeText(this , "خوش آمدید",Toast.LENGTH_LONG );
             Intent i=new Intent(this,SplashActivity.class);
             startActivity(i);
@@ -116,5 +117,6 @@ private Button btnLogin;
     public void initialize(){
         userName=txtUserName.getText().toString().trim();
         password=txtPassword.getText().toString().trim();
+
     }
 }
