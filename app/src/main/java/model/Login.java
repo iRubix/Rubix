@@ -21,24 +21,11 @@ public class Login {
             this.UserName = userName;
             this.Password = password;
         }
+
         public Login(String userName, String password){
             this.UserName = userName;
             this.Password = password;
         }
-
-
-
-
-    // Create table SQL query
-
-
-    public static final String CREATE_TABLE =
-                    " CREATE TABLE " + TABLE_NAME +  "("
-                    + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,"
-                    + COLUMN_USERNAME + " VARCHAR NOT NULL, "
-                    + COLUMN_PASSWORD + " VARCHAR NOT NULL "
-                    + ")";
-
 
 
     public void setId(Integer id) {
